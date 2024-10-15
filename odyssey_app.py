@@ -2,7 +2,7 @@ import os
 import re
 
 # Define the codebase and its corresponding directory
-codebase_dir = "/home/eijiotieno/Projects/odyssey-app"
+codebase_dir = "/home/eiji-otieno/Projects/odyssey-app"
 
 # Directories to include for this codebase
 include_dirs = [
