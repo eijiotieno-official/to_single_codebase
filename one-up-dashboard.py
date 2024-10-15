@@ -2,24 +2,30 @@ import os
 import re
 
 # Define the codebase and its corresponding directory
-codebase_dir = "/home/eijiotieno/Projects/odyssey-app"
+codebase_dir = "/home/eiji-otieno/Projects/one-up-dashboard"
 
 # Directories to include for this codebase
 include_dirs = [
-    "lib",
+    "src",
 ]  # Explicitly include subfolders
 
 # Define the specific file extensions to be considered
-accepted_extensions = [".dart"]  # Add the extensions you want to include
+accepted_extensions = [
+    ".ts",
+    ".tsx",
+    ".css",
+    ".js",
+    ".prisma",
+    ".json",
+]  # Add the extensions you want to include
 
 # Output file where the combined codebase will be saved
-output_file = "output/odyssey_app.txt"
+output_file = "output/one-up-dashboard.txt"
 
 
 def remove_comments(code):
     """
     Remove single-line and multi-line comments from the code.
-    Assumes the code is in Dart format for comment styles.
     """
     # Remove single-line comments (//)
     code = re.sub(r"//.*", "", code)
@@ -43,8 +49,8 @@ with open(output_file, "w") as output:
                 if not any(file.endswith(ext) for ext in accepted_extensions):
                     continue
 
-                # Exclude files that end with .g.dart
-                if file.endswith(".g.dart") | file.endswith(".freezed.dart"):
+                # Exclude files that end with .ico
+                if file.endswith(".ico"):
                     continue
 
                 file_path = os.path.join(root, file)
